@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 id="Top">Instagram Post</h1>
+    <a  id="first"   href="http://localhost:3000/post/new"> Create New Post</a>
+    <div class="main">
+
+
+
+
+        <% for(post of data ) { %>
+            <div class="card">
+            <h2>@ <%= post.username %></h2>
+            <img  src="<%= post.filename %>" alt="" srcset="" width="120px" height="100px">
+            <p>Caption:-<%= post.caption %></p>
+            <a href="http://localhost:3000/post/<%= post.id %>">View</a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="http://localhost:3000/post/<%= post.id %>/edit">Edit</a>
+            &nbsp; &nbsp; &nbsp;
+    
+            <form action="http://localhost:3000/post/<%= post.id %>?_method=delete" method="post">
+                <button>delete</button>
+            </form>
+        </div>
+            <% } %>
+        &nbsp; &nbsp; &nbsp;
+    
+    </div>
+</body>
+</html>

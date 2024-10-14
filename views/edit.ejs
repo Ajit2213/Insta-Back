@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="last">
+
+        <h1 style="color: crimson; text-align: center;">Edit </h1>
+        <h4>id:-<%= post.id %></h4>
+        <p><%= post.username %></p>
+        <img src="/upload/<%=post.filename %>" alt="" width="120px" height="100px">
+    
+        <br>
+        <form method="post" action="/post/<%=post.id%>?_method=PATCH">
+    
+            <textarea name="caption" ><%= post.caption %></textarea>
+    <br>
+            <button>Edit Done</button>
+          </form>
+    </div>
+
+
+   
+</body>
+</html>
